@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { useEffect } from "react";
+import "./App.css";
+import { useLogger, LogInitialValues } from "./lib/index";
 
 function App() {
+  const [state, dispatch] = useLogger();
+  useEffect(() => {
+    console.log("THIS IS STATE", state);
+  }, []);
+  useEffect(() => {
+    dispatch({ type: "ERROR", payload: LogInitialValues });
+  }, []);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h2>Testing man</h2>
     </div>
   );
 }
