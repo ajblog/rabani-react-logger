@@ -15,7 +15,7 @@ It will handle any exceptions that happens at runtime in the wrapped component.
 Here is an example:
 
 ```jsx
-import { ErrorBoundaryHoc } from "./lib/index";
+import { ErrorBoundaryHoc } from "rabani-react-logger";
 
 const MyComponent = () => {
   //ANYTHING U WANNA DO
