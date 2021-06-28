@@ -1,6 +1,5 @@
 # Rabani React Logger
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 This project is a simple tool for your react project to handle exceptions by using HOC concept and React error boundaries.
 You can create a customized component to be shown when an exception is thrown.
 You can send the error's information to your elastic search server.
