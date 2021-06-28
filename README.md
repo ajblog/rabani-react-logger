@@ -25,7 +25,7 @@ const MyComponent = () => {
 export default ErrorBoundaryHoc(MyComponent);
 ```
 
-## `ErrorBoundaryHoc Optional Arguments`
+#### `ErrorBoundaryHoc Optional Arguments`
 
 The second arguments you can pass to ErrorBoundaryHoc is the Custom Component you want to be rendered when the exception is thrown.
 For example here I create a ShowError.js file as follows:
