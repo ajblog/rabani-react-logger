@@ -1,20 +1,52 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import "./App.css";
-import { useLogger, LogInitialValues } from "./lib/index";
+import { ErrorBoundaryHoc } from "./lib/index";
 
-function App() {
-  const [state, dispatch] = useLogger();
-  useEffect(() => {
-    console.log("THIS IS STATE", state);
-  }, []);
-  useEffect(() => {
-    dispatch({ type: "ERROR", payload: LogInitialValues });
-  }, []);
-  return (
-    <div className="App">
-      <h2>Testing man</h2>
-    </div>
-  );
+class App extends React.Component {
+  // const [state, dispatch] = useLogger();
+  // useEffect(() => {
+  //   console.log("THIS IS STATE", state);
+  // }, [state]);
+  // useEffect(() => {
+  //   dispatch({ type: "ERROR", payload: LogInitialValues });
+  // }, []);
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      counter: 0,
+      error: "",
+    };
+  }
+  componentDidUpdate() {
+    console.log(this.state.counter);
+  }
+
+  render() {
+    if (this.state.error.length) {
+      throw new Error("Error Dude");
+    } else {
+      return (
+        <div className="App">
+          <h2>Testing man</h2>
+          <button
+            onClick={() => {
+              if (this.state.counter <= 3)
+                this.setState({
+                  ...this.state,
+                  counter: this.state.counter + 1,
+                });
+              else {
+                this.setState({ ...this.state, error: "error" });
+              }
+            }}
+          >
+            Click me if you looking for trouble!!!
+          </button>
+        </div>
+      );
+    }
+  }
 }
 
-export default App;
+export default ErrorBoundaryHoc(App);

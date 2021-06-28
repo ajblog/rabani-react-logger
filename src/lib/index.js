@@ -1,4 +1,4 @@
-import { LogProvider, useLogger } from "./components/LogProvider";
-import { LogInitialValues } from "./components/LogPayloadFiller";
+import { ErrorBoundaryHoc } from "./components/ErrorBoundaryHoc";
+import ErrorBoundaryProvider from "./components/ErrorBoundaryProvider";
 
-export { LogProvider, LogInitialValues, useLogger };
+export { ErrorBoundaryHoc, ErrorBoundaryProvider };

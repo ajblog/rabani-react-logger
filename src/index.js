@@ -1,14 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import { LogProvider } from "./lib/index";
 
 ReactDOM.render(
   <React.StrictMode>
-    <LogProvider>
-      <App />
-    </LogProvider>
+    {/* <LogProvider> */}
+    <App />
+    {/* </LogProvider> */}
   </React.StrictMode>,
   document.getElementById("root")
 );
