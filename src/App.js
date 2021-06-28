@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import { ErrorBoundaryHoc } from "./lib/index";
+import ShowError from "./ShowError";
 
 class App extends React.Component {
   // const [state, dispatch] = useLogger();
@@ -49,4 +50,4 @@ class App extends React.Component {
   }
 }
 
-export default ErrorBoundaryHoc(App);
+export default ErrorBoundaryHoc(App, ShowError);

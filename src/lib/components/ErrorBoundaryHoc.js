@@ -2,7 +2,7 @@ import React from "react";
 import ShowError from "../../ShowError";
 import ErrorBoundaryProvider from "./ErrorBoundaryProvider";
 
-export const ErrorBoundaryHoc = (Component) => {
+export const ErrorBoundaryHoc = (Component, ErrorComponent) => {
   return class extends React.Component {
     constructor(props) {
       super(props);
@@ -10,7 +10,7 @@ export const ErrorBoundaryHoc = (Component) => {
 
     render() {
       return (
-        <ErrorBoundaryProvider>
+        <ErrorBoundaryProvider errorComponent={ErrorComponent}>
           <Component />
         </ErrorBoundaryProvider>
       );
