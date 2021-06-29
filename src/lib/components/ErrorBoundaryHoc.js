@@ -1,5 +1,4 @@
 import React from "react";
-import ShowError from "../../ShowError";
 import ErrorBoundaryProvider from "./ErrorBoundaryProvider";
 
 export const ErrorBoundaryHoc = (Component, ErrorComponent) => {

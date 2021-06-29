@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import "./App.css";
 import { ErrorBoundaryHoc } from "./lib/index";
-import ShowError from "./ShowError";
 
 class App extends React.Component {
   // const [state, dispatch] = useLogger();
@@ -24,30 +23,31 @@ class App extends React.Component {
   }
 
   render() {
-    if (this.state.error.length) {
-      throw new Error("Error Dude");
-    } else {
-      return (
-        <div className="App">
-          <h2>Testing man</h2>
-          <button
-            onClick={() => {
-              if (this.state.counter <= 3)
-                this.setState({
-                  ...this.state,
-                  counter: this.state.counter + 1,
-                });
-              else {
-                this.setState({ ...this.state, error: "error" });
-              }
-            }}
-          >
-            Click me if you looking for trouble!!!
-          </button>
-        </div>
-      );
-    }
+    // if (this.state.error.length) {
+    //   throw new Error("Error Dude");
+    // } else {
+    //   return (
+    //     <div className="App">
+    //       <h2>Testing man</h2>
+    //       <button
+    //         onClick={() => {
+    //           if (this.state.counter <= 3)
+    //             this.setState({
+    //               ...this.state,
+    //               counter: this.state.counter + 1,
+    //             });
+    //           else {
+    //             this.setState({ ...this.state, error: "error" });
+    //           }
+    //         }}
+    //       >
+    //         Click me if you looking for trouble!!!
+    //       </button>
+    //     </div>
+    //   );
+    // }
+    return <h1>Rabani React Logger</h1>;
   }
 }
 
-export default ErrorBoundaryHoc(App, ShowError);
+export default ErrorBoundaryHoc(App);
