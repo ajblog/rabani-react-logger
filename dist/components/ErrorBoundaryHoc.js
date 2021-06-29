@@ -7,8 +7,6 @@ exports.ErrorBoundaryHoc = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _ShowError = _interopRequireDefault(require("../../ShowError"));
-
 var _ErrorBoundaryProvider = _interopRequireDefault(require("./ErrorBoundaryProvider"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
