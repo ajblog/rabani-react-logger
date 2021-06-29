@@ -1,4 +1,5 @@
 import { ErrorBoundaryHoc } from "./components/ErrorBoundaryHoc";
-import ErrorBoundaryProvider from "./components/ErrorBoundaryProvider";
+import RabaniLogger from "./components/RabnaiLogger";
 
-export { ErrorBoundaryHoc, ErrorBoundaryProvider };
+export { ErrorBoundaryHoc };
+export default RabaniLogger;

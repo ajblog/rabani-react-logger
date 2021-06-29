@@ -1,5 +1,5 @@
 import React from "react";
-import ErrorBoundaryProvider from "./ErrorBoundaryProvider";
+import RabaniLogProvider from "./RabaniLogProvider";
 
 export const ErrorBoundaryHoc = (Component, ErrorComponent) => {
   return class extends React.Component {
@@ -9,9 +9,9 @@ export const ErrorBoundaryHoc = (Component, ErrorComponent) => {
 
     render() {
       return (
-        <ErrorBoundaryProvider errorComponent={ErrorComponent}>
+        <RabaniLogProvider errorComponent={ErrorComponent}>
           <Component />
-        </ErrorBoundaryProvider>
+        </RabaniLogProvider>
       );
     }
   };

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-export default class ErrorBoundaryProvider extends React.Component {
+export default class RabaniLogProvider extends React.Component {
   constructor(props) {
     super(props);
     this.state = { hasError: false };
@@ -16,7 +16,7 @@ export default class ErrorBoundaryProvider extends React.Component {
     // You can also log the error to an error reporting service
     // HERE I WILL REGISTER THE LOG TO THE ELASTIC SERVER
     this.setState({ ...this.state, hasError: true });
-    console.log(error, errorInfo);
+    console.log(error.lineNumber, errorInfo);
   }
 
   componentDidMount() {
@@ -37,6 +37,6 @@ export default class ErrorBoundaryProvider extends React.Component {
   }
 }
 
-ErrorBoundaryProvider.propTypes = {
+RabaniLogProvider.propTypes = {
   errorComponent: PropTypes.node,
 };
